@@ -1,0 +1,217 @@
+.sub-portfolio {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: auto;
+  left: 0;
+
+  padding: $pd-10 0;
+  margin: 0 auto;
+
+  visibility: hidden;
+
+  background-color: $color-black-1;
+
+  overflow: hidden;
+  overflow-y: auto;
+
+  &.active {
+    visibility: visible;
+  }
+
+  .portfolio__information {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    width: 1170px;
+    margin: $mg-10 auto;
+
+    .in-top .overlay {
+      transform-origin: 50% 0%;
+      animation: in-top 300ms ease 0ms 1 forwards;
+    }
+
+    .in-right .overlay {
+      transform-origin: 100% 0%;
+      animation: in-right 300ms ease 0ms 1 forwards;
+    }
+
+    .in-bottom .overlay {
+      transform-origin: 50% 100%;
+      animation: in-bottom 300ms ease 0ms 1 forwards;
+    }
+
+    .in-left .overlay {
+      transform-origin: 0% 0%;
+      animation: in-left 300ms ease 0ms 1 forwards;
+    }
+
+    .out-top .overlay {
+      transform-origin: 50% 0%;
+      animation: out-top 300ms ease 0ms 1 forwards;
+    }
+
+    .out-right .overlay {
+      transform-origin: 100% 50%;
+      animation: out-right 300ms ease 0ms 1 forwards;
+    }
+
+    .out-bottom .overlay {
+      transform-origin: 50% 100%;
+      animation: out-bottom 300ms ease 0ms 1 forwards;
+    }
+
+    .out-left .overlay {
+      transform-origin: 0% 0%;
+      animation: out-left 300ms ease 0ms 1 forwards;
+    }
+
+
+    .box {
+      perspective: 800px;
+
+      position: relative;
+      width: 100%;
+      height: 250px;
+      margin: 5px;
+      padding: 0;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      img {
+        min-height: 100%;
+        width: 100%;
+      }
+
+      .overlay {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 20px;
+
+        background-color: rgba($color: $color-black-0, $alpha: .7);
+
+        transform: rotate3d(1, 0, 0, 90deg);
+
+        pointer-events: none;
+
+        .portfolio__content {
+          @include styleText($color-white-0, $fs-20, $fw-300);
+
+          text-align: center;
+          letter-spacing: 2px;
+
+          margin-top: $mg-20;
+          padding: 0 $pd-10;
+        }
+
+        .portfolio__detail {
+          @include styleText($color-white-0, $fs-14, $fw-400);
+
+          position: absolute;
+          right: 20px;
+          bottom: 10%;
+
+          display: inline-block;
+
+          padding: $pd-10 $pd-15 - 2;
+
+          border-radius: 5px;
+          background-color: var(--main-color);
+
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+        }
+      }
+    }
+  }
+}
+
+@keyframes in-top {
+  from {
+    transform: rotate3d(-1, 0, 0, 90deg)
+  }
+
+  to {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+@keyframes in-right {
+  from {
+    transform: rotate3d(0, -1, 0, 90deg)
+  }
+
+  to {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+@keyframes in-bottom {
+  from {
+    transform: rotate3d(1, 0, 0, 90deg)
+  }
+
+  to {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+@keyframes in-left {
+  from {
+    transform: rotate3d(0, 1, 0, 90deg)
+  }
+
+  to {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+@keyframes out-top {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+
+  to {
+    transform: rotate3d(-1, 0, 0, 104deg)
+  }
+}
+
+@keyframes out-right {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+
+  to {
+    transform: rotate3d(0, -1, 0, 104deg)
+  }
+}
+
+@keyframes out-bottom {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+
+  to {
+    transform: rotate3d(1, 0, 0, 104deg)
+  }
+}
+
+@keyframes out-left {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+
+  to {
+    transform: rotate3d(0, 1, 0, 104deg)
+  }
+}

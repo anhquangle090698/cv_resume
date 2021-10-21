@@ -1,0 +1,87 @@
+.sub-contact {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: auto;
+  left: 0;
+
+  padding: $pd-10 0;
+
+  visibility: hidden;
+
+  background-color: $color-black-1;
+
+  overflow: hidden;
+  overflow-y: auto;
+
+  &.active {
+    visibility: visible;
+  }
+
+  .contact__information {
+      .contact__title {
+        position: relative;
+
+        display: inline-block;
+        margin: $mg-20 0;
+        padding: 0;
+
+        @include styleText($color-white-0, $fs-24, $fw-400);
+
+        &::after {
+          content: "";
+
+          display: block;
+
+          width: 2px;
+          height: 100%;
+
+          position: absolute;
+          bottom: 0;
+          left: -10px;
+
+          background-color: var(--main-color);
+        }
+      }
+
+      .contact__getIn {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-top: $mg-30;
+
+        gap: 40px 20px;
+      }
+
+      .contact__image {
+        margin-right: $mg-20;
+        max-width: 24px;
+      }
+
+      .contact__infor {
+
+        flex-basis: 48%;
+
+        span {
+          @include styleText($color-gray-3, $fs-16, $fw-400);
+          letter-spacing: 1px;
+        }
+
+        i {
+          @include styleText($color-gray-1, $fs-20 + 2, $fw-900);
+
+          margin-right: $mg-20;
+          max-width: 20px;
+        }
+      }
+  }
+
+  .contact__thanks {
+    @include styleText(var(--main-color), $fs-24 + 6, $fw-900);
+
+    margin-top: 200px;
+
+    text-align: center;
+    letter-spacing: 2px;
+  }
+}

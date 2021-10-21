@@ -1,0 +1,83 @@
+//Nếu số nhỏ hơn 10px thì có thể lấy biến mặc đỉnh + thêm vào, 
+//hoặc có thể tạo thêm biến mới
+
+// variable color
+$color-black-0 : #000;
+$color-black-1 : #222;
+$color-black-2 : #282828;
+$color-black-3 : #333;
+$color-gray-0 : #555;
+$color-gray-1 : #aaa;
+$color-gray-2 : #d4d4d4;
+$color-gray-3 : #e5e5e5;
+$color-gray-4 : #eee;
+$color-gray-5 : #a5a5a5;
+$color-gray-6 : #d5d5d5;
+$color-gray-7 : #666;
+
+$color-white-0 : #fff;
+$color-white-1 : #f8f8f8;
+
+$color-orange-0 : #e56845;
+$color-orange-1 : #ff724c;
+$color-orange-2 : #fd9129;
+
+$color-blue-0 : #007bff;
+$color-green-0 : #8bcf00;
+$color-yellow-0 : #e5be24;
+$color-purple-0 : #9161e0;
+
+//Variable font-size
+
+$fs-16 : 16px;
+$fs-14 : 14px;
+$fs-24 : 24px;
+$fs-20 : 20px;
+$fs-50: 50px;
+$fs-60: 60px;
+
+//Variable font-weight
+
+$fw-700 : 700;
+$fw-200 : 200;
+$fw-300 : 300;
+$fw-400 : 400;
+$fw-900 : 900;
+
+//Variable margin
+
+$mg-10 : 10px;
+$mg-15 : 15px;
+$mg-20 : 20px;
+$mg-25 : 25px;
+$mg-30 : 30px;
+$mg-40 : 40px;
+$mg-50 : 50px;
+$mg-80 : 80px;
+
+//Variable padding
+
+$pd-5 : 5px;
+$pd-10 : 10px;
+$pd-15 : 15px;
+$pd-20 : 20px;
+$pd-25 : 25px;
+$pd-40 : 40px;
+$pd-50 : 50px;
+$pd-60 : 60px;
+
+//Variable border-radius
+$border-radius : 0;
+
+//Variable line-height 
+
+$line-height-0: 1.2;
+
+
+//Break points (responsive)
+$breakpoints:(
+    'extra-large': 1200px,
+    'large' : 992px,
+    'medium' : 768px,
+    'small' : 576px,
+)
