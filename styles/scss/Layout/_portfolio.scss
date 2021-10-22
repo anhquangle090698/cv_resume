@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .sub-portfolio {
   position: absolute;
   width: 100%;
@@ -20,8 +27,10 @@
   }
 
   .portfolio__information {
+    display: -ms-grid;
 
     display: grid;
+    -ms-grid-columns: 1fr 25px 1fr 25px 1fr;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 
@@ -29,47 +38,71 @@
     margin: $mg-10 auto;
 
     .in-top .overlay {
+      -webkit-transform-origin: 50% 0%;
+      -ms-transform-origin: 50% 0%;
       transform-origin: 50% 0%;
+      -webkit-animation: in-top 300ms ease 0ms 1 forwards;
       animation: in-top 300ms ease 0ms 1 forwards;
     }
 
     .in-right .overlay {
+      -webkit-transform-origin: 100% 0%;
+      -ms-transform-origin: 100% 0%;
       transform-origin: 100% 0%;
+      -webkit-animation: in-right 300ms ease 0ms 1 forwards;
       animation: in-right 300ms ease 0ms 1 forwards;
     }
 
     .in-bottom .overlay {
+      -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
       transform-origin: 50% 100%;
+      -webkit-animation: in-bottom 300ms ease 0ms 1 forwards;
       animation: in-bottom 300ms ease 0ms 1 forwards;
     }
 
     .in-left .overlay {
+      -webkit-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
       transform-origin: 0% 0%;
+      -webkit-animation: in-left 300ms ease 0ms 1 forwards;
       animation: in-left 300ms ease 0ms 1 forwards;
     }
 
     .out-top .overlay {
+      -webkit-transform-origin: 50% 0%;
+      -ms-transform-origin: 50% 0%;
       transform-origin: 50% 0%;
+      -webkit-animation: out-top 300ms ease 0ms 1 forwards;
       animation: out-top 300ms ease 0ms 1 forwards;
     }
 
     .out-right .overlay {
+      -webkit-transform-origin: 100% 50%;
+      -ms-transform-origin: 100% 50%;
       transform-origin: 100% 50%;
+      -webkit-animation: out-right 300ms ease 0ms 1 forwards;
       animation: out-right 300ms ease 0ms 1 forwards;
     }
 
     .out-bottom .overlay {
+      -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
       transform-origin: 50% 100%;
+      -webkit-animation: out-bottom 300ms ease 0ms 1 forwards;
       animation: out-bottom 300ms ease 0ms 1 forwards;
     }
 
     .out-left .overlay {
+      -webkit-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
       transform-origin: 0% 0%;
+      -webkit-animation: out-left 300ms ease 0ms 1 forwards;
       animation: out-left 300ms ease 0ms 1 forwards;
     }
 
-
     .box {
+      -webkit-perspective: 800px;
       perspective: 800px;
 
       position: relative;
@@ -85,10 +118,11 @@
       img {
         min-height: 100%;
         width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
       }
 
       .overlay {
-
         position: absolute;
         top: 0;
         left: 0;
@@ -98,7 +132,9 @@
 
         padding: 20px;
 
-        background-color: rgba($color: $color-black-0, $alpha: .7);
+        background-color: rgba($color: $color-black-0, $alpha: 0.7);
+
+        -webkit-transform: rotate3d(1, 0, 0, 90deg);
 
         transform: rotate3d(1, 0, 0, 90deg);
 
@@ -128,90 +164,205 @@
           border-radius: 5px;
           background-color: var(--main-color);
 
-          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+            rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+            rgba(0, 0, 0, 0.22) 0px 15px 12px;
         }
       }
     }
   }
 }
 
-@keyframes in-top {
+@-webkit-keyframes in-top {
   from {
-    transform: rotate3d(-1, 0, 0, 90deg)
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+    transform: rotate3d(-1, 0, 0, 90deg);
   }
 
   to {
-    transform: rotate3d(0, 0, 0, 0deg)
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@keyframes in-top {
+  from {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+    transform: rotate3d(-1, 0, 0, 90deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@-webkit-keyframes in-right {
+  from {
+    -webkit-transform: rotate3d(0, -1, 0, 90deg);
+    transform: rotate3d(0, -1, 0, 90deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
   }
 }
 
 @keyframes in-right {
   from {
-    transform: rotate3d(0, -1, 0, 90deg)
+    -webkit-transform: rotate3d(0, -1, 0, 90deg);
+    transform: rotate3d(0, -1, 0, 90deg);
   }
 
   to {
-    transform: rotate3d(0, 0, 0, 0deg)
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@-webkit-keyframes in-bottom {
+  from {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
   }
 }
 
 @keyframes in-bottom {
   from {
-    transform: rotate3d(1, 0, 0, 90deg)
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+    transform: rotate3d(1, 0, 0, 90deg);
   }
 
   to {
-    transform: rotate3d(0, 0, 0, 0deg)
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@-webkit-keyframes in-left {
+  from {
+    -webkit-transform: rotate3d(0, 1, 0, 90deg);
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
   }
 }
 
 @keyframes in-left {
   from {
-    transform: rotate3d(0, 1, 0, 90deg)
+    -webkit-transform: rotate3d(0, 1, 0, 90deg);
+    transform: rotate3d(0, 1, 0, 90deg);
   }
 
   to {
-    transform: rotate3d(0, 0, 0, 0deg)
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@-webkit-keyframes out-top {
+  from {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(-1, 0, 0, 104deg);
+    transform: rotate3d(-1, 0, 0, 104deg);
   }
 }
 
 @keyframes out-top {
   from {
-    transform: rotate3d(0, 0, 0, 0deg)
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
   }
 
   to {
-    transform: rotate3d(-1, 0, 0, 104deg)
+    -webkit-transform: rotate3d(-1, 0, 0, 104deg);
+    transform: rotate3d(-1, 0, 0, 104deg);
+  }
+}
+
+@-webkit-keyframes out-right {
+  from {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, -1, 0, 104deg);
+    transform: rotate3d(0, -1, 0, 104deg);
   }
 }
 
 @keyframes out-right {
   from {
-    transform: rotate3d(0, 0, 0, 0deg)
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
   }
 
   to {
-    transform: rotate3d(0, -1, 0, 104deg)
+    -webkit-transform: rotate3d(0, -1, 0, 104deg);
+    transform: rotate3d(0, -1, 0, 104deg);
+  }
+}
+
+@-webkit-keyframes out-bottom {
+  from {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(1, 0, 0, 104deg);
+    transform: rotate3d(1, 0, 0, 104deg);
   }
 }
 
 @keyframes out-bottom {
   from {
-    transform: rotate3d(0, 0, 0, 0deg)
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
   }
 
   to {
-    transform: rotate3d(1, 0, 0, 104deg)
+    -webkit-transform: rotate3d(1, 0, 0, 104deg);
+    transform: rotate3d(1, 0, 0, 104deg);
+  }
+}
+
+@-webkit-keyframes out-left {
+  from {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 1, 0, 104deg);
+    transform: rotate3d(0, 1, 0, 104deg);
   }
 }
 
 @keyframes out-left {
   from {
-    transform: rotate3d(0, 0, 0, 0deg)
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
   }
 
   to {
-    transform: rotate3d(0, 1, 0, 104deg)
+    -webkit-transform: rotate3d(0, 1, 0, 104deg);
+    transform: rotate3d(0, 1, 0, 104deg);
   }
 }

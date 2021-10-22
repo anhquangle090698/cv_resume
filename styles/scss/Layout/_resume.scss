@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .sub-resume {
   position: absolute;
   width: 100%;
@@ -145,7 +152,10 @@
     }
 
     .resume__skillInfor {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 
       margin-left: $mg-10;
@@ -226,7 +236,10 @@
     }
 
     .resume__skillInfor {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 
       margin-left: $mg-10;
@@ -273,7 +286,11 @@
 
     .resume__languageInfor {
       .resume__languageInfor--container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
 
         span {
@@ -293,16 +310,28 @@
       border: 1px solid $color-white-0;
       border-radius: 5px;
 
+      -webkit-transition: 0.3s;
+
+      -o-transition: 0.3s;
+
       transition: 0.3s;
 
       a {
         @include styleText($color-white-0, $fs-14, $fw-400);
+
+        -webkit-transition: 0.3s;
+
+        -o-transition: 0.3s;
 
         transition: 0.3s;
       }
 
       i {
         @include styleText($color-white-0, $fs-14, $fw-900);
+
+        -webkit-transition: 0.3s;
+
+        -o-transition: 0.3s;
 
         transition: 0.3s;
       }

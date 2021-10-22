@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .sub-contact {
   position: absolute;
   width: 100%;
@@ -19,61 +26,65 @@
   }
 
   .contact__information {
-      .contact__title {
-        position: relative;
+    .contact__title {
+      position: relative;
 
-        display: inline-block;
-        margin: $mg-20 0;
-        padding: 0;
+      display: inline-block;
+      margin: $mg-20 0;
+      padding: 0;
 
-        @include styleText($color-white-0, $fs-24, $fw-400);
+      @include styleText($color-white-0, $fs-24, $fw-400);
 
-        &::after {
-          content: "";
+      &::after {
+        content: "";
 
-          display: block;
+        display: block;
 
-          width: 2px;
-          height: 100%;
+        width: 2px;
+        height: 100%;
 
-          position: absolute;
-          bottom: 0;
-          left: -10px;
+        position: absolute;
+        bottom: 0;
+        left: -10px;
 
-          background-color: var(--main-color);
-        }
+        background-color: var(--main-color);
+      }
+    }
+
+    .contact__getIn {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+      margin-top: $mg-30;
+
+      gap: 40px 20px;
+    }
+
+    .contact__image {
+      margin-right: $mg-20;
+      max-width: 24px;
+    }
+
+    .contact__infor {
+      -ms-flex-preferred-size: 48%;
+
+      flex-basis: 48%;
+
+      span {
+        @include styleText($color-gray-3, $fs-16, $fw-400);
+        letter-spacing: 1px;
       }
 
-      .contact__getIn {
-        display: flex;
-        flex-wrap: wrap;
+      i {
+        @include styleText($color-gray-1, $fs-20 + 2, $fw-900);
 
-        margin-top: $mg-30;
-
-        gap: 40px 20px;
-      }
-
-      .contact__image {
         margin-right: $mg-20;
-        max-width: 24px;
+        max-width: 20px;
       }
-
-      .contact__infor {
-
-        flex-basis: 48%;
-
-        span {
-          @include styleText($color-gray-3, $fs-16, $fw-400);
-          letter-spacing: 1px;
-        }
-
-        i {
-          @include styleText($color-gray-1, $fs-20 + 2, $fw-900);
-
-          margin-right: $mg-20;
-          max-width: 20px;
-        }
-      }
+    }
   }
 
   .contact__thanks {

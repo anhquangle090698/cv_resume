@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .sub-home {
   position: absolute;
   width: 95%;
@@ -39,6 +46,8 @@
       height: 100%;
 
       background-color: $color-white-1;
+
+      -webkit-animation: textEffect 6s steps(15) infinite;
 
       animation: textEffect 6s steps(15) infinite;
     }

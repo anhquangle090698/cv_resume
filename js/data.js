@@ -27,13 +27,13 @@ const data = [
       content: "I designed mercedes home clone based on website www.mercedes-benz.com.I tried create website most similar with website real (include some interacting, responsive, font, color,...).",
     },
     {
-      projectName: "web 4",
+      projectName: "CV Resume",
       technology:
-        "Html5, Css3, JavaScript, React, Redux, Axios(Api), Bootstrap,",
+        "HTML5, CSS3, SCSS, Javascript, Jquery",
       github:
-        "https://github.com/anhquangle090698/doan_datvexemphim_nhom2_client",
-      deploy: "aaa",
-      content: "website đặt vé xem phim trực tuyến",
+        "https://github.com/anhquangle090698/cv_resume",
+      deploy: "https://cv-resume-leanhquang.vercel.app",
+      content: "I designed and developed cv resume in order to introduction about me such as: contact, portfolio,...",
     },
 ];
 

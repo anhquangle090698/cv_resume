@@ -1,202 +1,207 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .panel__Switcher {
+  @include styleText($color-white-0, $fs-20 - 2, $fw-400);
 
-    @include styleText($color-white-0, $fs-20 - 2, $fw-400);
+  position: fixed;
+  top: 120px;
+  right: 0;
 
-    position: fixed;
-    top: 120px;
-    right: 0;
+  line-height: 1em;
+  text-decoration: none;
 
-    line-height: 1em;
-    text-decoration: none;
+  background-color: $color-white-0;
 
-    background-color: $color-white-0;
+  padding: $pd-10 $pd-10 + 2;
 
-    padding: $pd-10 $pd-10 + 2;
+  border: 1px solid$color-gray-6;
 
-    border: 1px solid$color-gray-6;
+  outline: 0;
+  cursor: pointer;
 
-    outline: 0;
-    cursor: pointer;
+  -webkit-transition: all 0.2s linear;
 
-    -webkit-transition: all .2s linear;
+  -o-transition: all 0.2s linear;
 
-    -o-transition: all .2s linear;
+  transition: all 0.2s linear;
 
-    transition: all .2s linear; 
+  i {
+    color: $color-black-1;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
-    i {
-        color: $color-black-1;
-        -webkit-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-                transform: rotate(0deg);
-        -webkit-transition: all .3s ease-in-out;
-        -o-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-
-        &:hover {
-            -webkit-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-                transform: rotate(360deg);
-        }
+    &:hover {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
+  }
 }
 
 .panel {
-    position: fixed;
-    top: 168px;
-    right: 0;
-    z-index: 999;
+  position: fixed;
+  top: 168px;
+  right: 0;
+  z-index: 999;
 
-    padding: $pd-15 $pd-15 $pd-20;
+  padding: $pd-15 $pd-15 $pd-20;
 
-    background-color: $color-white-0;
+  background-color: $color-white-0;
 
-    border: 1px solid $color-gray-6;
+  border: 1px solid $color-gray-6;
 
-    -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
 
-    width: 160px;
-    height: auto;
+  width: 160px;
+  height: auto;
 
-    -webkit-transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
 
-    -o-transition: all .3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 
-    transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
-    &.panel-right {
-        margin-right: -160px;
-        opacity: 0;
-        visibility: hidden;
+  &.panel-right {
+    margin-right: -160px;
+    opacity: 0;
+    visibility: hidden;
 
-        -webkit-transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
 
-        -o-transition: all .3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 
-        transition: all .3s ease-in-out;
-        
-        &.active {
-            margin-right: 0;
-            opacity: 1;
-            visibility: visible;
-        
-            -webkit-transition: all .3s ease-in-out;
-        
-            -o-transition: all .3s ease-in-out;
-        
-            transition: all .3s ease-in-out;
-        }
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+      margin-right: 0;
+      opacity: 1;
+      visibility: visible;
+
+      -webkit-transition: all 0.3s ease-in-out;
+
+      -o-transition: all 0.3s ease-in-out;
+
+      transition: all 0.3s ease-in-out;
     }
+  }
 
-    .panel__title {
-        text-align: center;
+  .panel__title {
+    text-align: center;
 
-        margin: $mg-20 0;
+    margin: $mg-20 0;
+  }
+
+  .main__color {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 5px 1fr 5px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+
+    .main__color--option {
+      position: relative;
+
+      display: inline-block;
+      text-decoration: none;
+
+      padding: $pd-10 + 2 $pd-15;
+      background-color: $color-black-2;
+
+      cursor: pointer;
+
+      &.current-color::after {
+        content: "";
+
+        position: absolute;
+        left: 40%;
+        top: 30%;
+
+        display: block;
+
+        width: 5px;
+        height: 8px;
+
+        border: solid $color-white-0;
+        border-width: 0 2px 2px 0;
+
+        -webkit-transform: rotate(45deg);
+
+        -ms-transform: rotate(45deg);
+
+        transform: rotate(45deg);
+      }
+
+      &.color-red {
+        background-color: $color-orange-1;
+      }
+
+      &.color-blue {
+        background-color: $color-blue-0;
+      }
+
+      &.color-green {
+        background-color: $color-green-0;
+      }
+
+      &.color-orange {
+        background-color: $color-orange-2;
+      }
+
+      &.color-yellow {
+        background-color: $color-yellow-0;
+      }
+
+      &.color-violet {
+        background-color: $color-purple-0;
+      }
     }
+  }
 
-    .main__color {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 5px 1fr 5px 1fr;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
+  .main__nav {
+    margin-bottom: $mg-10;
 
-        .main__color--option {
-            position: relative;
+    .main__nav--position {
+      @include styleText($color-gray-7, $fs-14, $fw-400);
 
-            display: inline-block;
-            text-decoration: none;
+      display: inline-block;
 
-            padding: $pd-10 + 2 $pd-15;
-            background-color: $color-black-2;
+      margin: 0 0 $mg-10;
 
-            cursor: pointer; 
+      text-align: center;
 
-            &.current-color::after {
-                content: '';
+      width: 100%;
+      height: 34px;
+      line-height: 34px;
 
-                position: absolute;
-                left: 40%;
-                top: 30%;
+      background-color: $color-white-1;
 
-                display: block;
+      cursor: pointer;
 
-                width: 5px;
-                height: 8px;
+      &.nav-left {
+        border-left: 3px solid $color-black-3;
+      }
 
-                border: solid $color-white-0;
-                border-width: 0 2px 2px 0;
+      &.nav-top {
+        border-top: 3px solid $color-black-3;
+      }
 
-                -webkit-transform: rotate(45deg);
+      &.nav-bottom {
+        border-bottom: 3px solid $color-black-3;
+      }
 
-                    -ms-transform: rotate(45deg);
-
-                        transform: rotate(45deg);
-            }
-
-            &.color-red {
-                background-color: $color-orange-1;
-            }
-            
-            &.color-blue {
-                background-color: $color-blue-0;
-            }
-            
-            &.color-green {
-                background-color: $color-green-0;
-            }
-            
-            &.color-orange {
-                background-color: $color-orange-2;
-            }
-            
-            &.color-yellow {
-                background-color: $color-yellow-0;
-            }
-            
-            &.color-violet {
-                background-color: $color-purple-0;
-            }
-        }
+      &.current-nav-position {
+        border-color: var(--main-color);
+      }
     }
-
-    .main__nav {
-        margin-bottom: $mg-10;
-
-        .main__nav--position {
-
-            @include styleText($color-gray-7, $fs-14, $fw-400);
-
-            display: inline-block;
-
-            margin: 0 0 $mg-10;
-              
-            text-align: center;
-        
-            width: 100%;
-            height: 34px;
-            line-height: 34px;
-        
-            background-color: $color-white-1;
-        
-            cursor: pointer;
-
-            &.nav-left {
-                border-left: 3px solid $color-black-3;
-            }
-            
-            &.nav-top {
-                border-top: 3px solid $color-black-3;
-            }
-            
-            &.nav-bottom {
-                border-bottom: 3px solid $color-black-3;
-            }
-
-            &.current-nav-position {
-                border-color: var(--main-color);
-            }
-        }
-    }
+  }
 }
